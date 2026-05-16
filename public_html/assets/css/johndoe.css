@@ -1,17 +1,5 @@
 @charset "UTF-8";
-/*!
-=========================================================
-* JohnDoe Landing page
-=========================================================
 
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap");
 :root {
   --blue: #79A9F5;
@@ -25,10 +13,10 @@
   --teal: #20c997;
   --cyan: #47D8E0;
   --white: #fff;
-  --gray: #6c757d;
+  --gray: #212529;
   --gray-dark: #343a40;
   --primary: #8c1445;
-  --secondary: #6c757d;
+  --secondary: #212529;
   --success: #A3C14A;
   --info: #47D8E0;
   --warning: #FF8882;
@@ -221,7 +209,8 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #6c757d;
+  color: #212529;
+  font-size: 18px;
   text-align: left;
   caption-side: bottom;
 }
@@ -478,8 +467,8 @@ mark,
 
 .blockquote-footer {
   display: block;
-  font-size: 80%;
-  color: #6c757d;
+  font-size: 17px;
+  color: #212529;
 }
 
 .blockquote-footer::before {
@@ -510,8 +499,8 @@ mark,
 }
 
 .figure-caption {
-  font-size: 90%;
-  color: #6c757d;
+  font-size: 18px;
+  color: #212529;
 }
 
 code {
@@ -2200,27 +2189,27 @@ pre code {
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #6c757d;
+  color: #212529;
   opacity: 1;
 }
 
 .form-control::-moz-placeholder {
-  color: #6c757d;
+  color: #212529;
   opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #6c757d;
+  color: #212529;
   opacity: 1;
 }
 
 .form-control::-ms-input-placeholder {
-  color: #6c757d;
+  color: #212529;
   opacity: 1;
 }
 
 .form-control::placeholder {
-  color: #6c757d;
+  color: #212529;
   opacity: 1;
 }
 
@@ -2344,7 +2333,7 @@ textarea.form-control {
 }
 
 .form-check-input:disabled ~ .form-check-label {
-  color: #6c757d;
+  color: #212529;
 }
 
 .form-check-label {
@@ -2807,36 +2796,36 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #212529;
+  border-color: #212529;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5a6268;
-  border-color: #545b62;
+  background-color: #0d0f11;
+  border-color: #050607;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
 .btn-secondary.disabled, .btn-secondary:disabled {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #212529;
+  border-color: #212529;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
   color: #fff;
-  background-color: #545b62;
-  border-color: #4e555b;
+  background-color: #050607;
+  border-color: #000000;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-secondary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
 .btn-success {
@@ -3076,30 +3065,30 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #6c757d;
-  border-color: #6c757d;
+  color: #212529;
+  border-color: #212529;
 }
 
 .btn-outline-secondary:hover {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #212529;
+  border-color: #212529;
 }
 
 .btn-outline-secondary:focus, .btn-outline-secondary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
 .btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
-  color: #6c757d;
+  color: #212529;
   background-color: transparent;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-secondary.dropdown-toggle {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #212529;
+  border-color: #212529;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
@@ -3316,7 +3305,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link:disabled, .btn-link.disabled {
-  color: #6c757d;
+  color: #212529;
   pointer-events: none;
 }
 
@@ -3608,7 +3597,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
-  color: #6c757d;
+  color: #212529;
   pointer-events: none;
   background-color: transparent;
 }
@@ -3622,7 +3611,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #212529;
   white-space: nowrap;
 }
 
@@ -4029,7 +4018,7 @@ input[type="button"].btn-block {
 }
 
 .custom-control-input:disabled ~ .custom-control-label {
-  color: #6c757d;
+  color: #212529;
 }
 
 .custom-control-input:disabled ~ .custom-control-label::before {
@@ -4182,7 +4171,7 @@ input[type="button"].btn-block {
 }
 
 .custom-select:disabled {
-  color: #6c757d;
+  color: #212529;
   background-color: #eaf0fc;
 }
 
@@ -4475,7 +4464,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link.disabled {
-  color: #6c757d;
+  color: #212529;
   pointer-events: none;
   cursor: default;
 }
@@ -4499,7 +4488,7 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #6c757d;
+  color: #212529;
   background-color: transparent;
   border-color: transparent;
 }
@@ -5417,7 +5406,7 @@ input[type="button"].btn-block {
 }
 
 .page-item.disabled .page-link {
-  color: #6c757d;
+  color: #212529;
   pointer-events: none;
   cursor: auto;
   background-color: #fff;
@@ -5513,17 +5502,17 @@ a.badge-primary:focus, a.badge-primary.focus {
 
 .badge-secondary {
   color: #fff;
-  background-color: #6c757d;
+  background-color: #212529;
 }
 
 a.badge-secondary:hover, a.badge-secondary:focus {
   color: #fff;
-  background-color: #545b62;
+  background-color: #050607;
 }
 
 a.badge-secondary:focus, a.badge-secondary.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
 .badge-success {
@@ -5923,7 +5912,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .list-group-item.disabled, .list-group-item:disabled {
-  color: #6c757d;
+  color: #212529;
   pointer-events: none;
   background-color: #fff;
 }
@@ -6281,7 +6270,7 @@ a.close.disabled {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.25rem 0.75rem;
-  color: #6c757d;
+  color: #212529;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -7152,13 +7141,13 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #212529 !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #545b62 !important;
+  background-color: #0d0f11 !important;
 }
 
 .bg-success {
@@ -7274,7 +7263,7 @@ button.bg-dark:focus {
 }
 
 .border-secondary {
-  border-color: #6c757d !important;
+  border-color: #212529 !important;
 }
 
 .border-success {
@@ -10785,11 +10774,11 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #6c757d !important;
+  color: #212529 !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #494f54 !important;
+  color: #8c1445 !important;
 }
 
 .text-success {
@@ -10845,7 +10834,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #212529 !important;
 }
 
 .text-black-50 {
@@ -10988,8 +10977,8 @@ p {
 }
 
 .info {
-  color: #6c757d;
-  font-size: 14px;
+  color: #212529;
+  font-size: 18px;
 }
 
 .info li {
@@ -11084,8 +11073,8 @@ p {
 }
 
 .card .card-body {
-  font-size: 14px;
-  color: #6c757d;
+  font-size: 18px;
+  color: #212529;
 }
 
 .price-card {
@@ -11362,7 +11351,7 @@ pre {
 
 pre code,
 pre .code {
-  color: #6c757d;
+  color: #212529;
 }
 
 .dropdown-menu.form {
@@ -11681,4 +11670,8 @@ pre .code {
   background: #8c1445;
   display: block;
   margin-top: 10px;
+}
+
+p {
+  font-size: 16px;
 }

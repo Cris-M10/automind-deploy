@@ -1,17 +1,3 @@
-/*!
-=========================================================
-* JohnDoe Landing page
-=========================================================
-
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // smooth scroll
 $(document).ready(function(){
     $(".navbar .nav-link").on('click', function(event) {
@@ -148,3 +134,82 @@ function initMap() {
       ]
     });
 }
+
+// Modern Contact Form
+$(document).ready(function() {
+    // Floating labels - handle autofill
+    $('.floating-input').each(function() {
+        if ($(this).val()) {
+            $(this).addClass('filled');
+        }
+    });
+
+    $('.floating-input').on('blur', function() {
+        if ($(this).val()) {
+            $(this).addClass('filled');
+        } else {
+            $(this).removeClass('filled');
+        }
+    });
+
+    // Form submission
+    $('#modern-contact-form').on('submit', function(e) {
+        e.preventDefault();
+
+        var isValid = true;
+        var $form = $(this);
+
+        // Reset errors
+        $form.find('.floating-input').removeClass('error');
+
+        // Validate required fields
+        $form.find('.floating-input[required]').each(function() {
+            if (!$(this).val().trim()) {
+                $(this).addClass('error');
+                isValid = false;
+            }
+        });
+
+        // Validate email format
+        var $email = $('#contact-email');
+        if ($email.val().trim()) {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test($email.val().trim())) {
+                $email.addClass('error');
+                isValid = false;
+            }
+        }
+
+        if (!isValid) {
+            return;
+        }
+
+        // Loading state
+        var $btn = $form.find('.btn-submit');
+        $btn.addClass('loading');
+
+        // Simulate send (replace with actual AJAX)
+        setTimeout(function() {
+            $btn.removeClass('loading');
+
+            // Hide form, show success
+            $form.find('.form-row, .floating-group, .btn-submit').hide();
+            if ($form.find('.form-success').length === 0) {
+                $form.append(
+                    '<div class="form-success show">' +
+                        '<div class="form-success-icon"><i class="ti-check-box"></i></div>' +
+                        '<h3 class="form-success-title">Mensaje enviado</h3>' +
+                        '<p class="form-success-text">Gracias por contactarnos. Te responderemos a la brevedad.</p>' +
+                    '</div>'
+                );
+            } else {
+                $form.find('.form-success').addClass('show');
+            }
+        }, 1500);
+    });
+
+    // Remove error on focus
+    $('.floating-input').on('focus', function() {
+        $(this).removeClass('error');
+    });
+});
