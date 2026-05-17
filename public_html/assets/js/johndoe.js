@@ -184,32 +184,86 @@ $(document).ready(function() {
             return;
         }
 
+        // Get form data
+        var formData = {
+            name: $('#contact-name').val().trim(),
+            email: $('#contact-email').val().trim(),
+            subject: $('#contact-subject').val().trim() || 'Contacto desde M25 AutoMind',
+            message: $('#contact-message').val().trim()
+        };
+
         // Loading state
         var $btn = $form.find('.btn-submit');
         $btn.addClass('loading');
 
-        // Simulate send (replace with actual AJAX)
-        setTimeout(function() {
-            $btn.removeClass('loading');
-
-            // Hide form, show success
-            $form.find('.form-row, .floating-group, .btn-submit').hide();
-            if ($form.find('.form-success').length === 0) {
-                $form.append(
-                    '<div class="form-success show">' +
-                        '<div class="form-success-icon"><i class="ti-check-box"></i></div>' +
-                        '<h3 class="form-success-title">Mensaje enviado</h3>' +
-                        '<p class="form-success-text">Gracias por contactarnos. Te responderemos a la brevedad.</p>' +
-                    '</div>'
-                );
-            } else {
-                $form.find('.form-success').addClass('show');
+        // Send to Formspree
+        $.ajax({
+            url: $form.attr('action'),
+            method: 'POST',
+            data: JSON.stringify(formData),
+            contentType: 'application/json',
+            success: function() {
+                $btn.removeClass('loading');
+                $form.find('.form-row, .floating-group, .btn-submit').hide();
+                if ($form.find('.form-success').length === 0) {
+                    $form.append(
+                        '<div class="form-success show">' +
+                            '<div class="form-success-icon"><i class="ti-check-box"></i></div>' +
+                            '<h3 class="form-success-title">Mensaje enviado</h3>' +
+                            '<p class="form-success-text">Gracias por contactarnos. Te responderemos a la brevedad.</p>' +
+                        '</div>'
+                    );
+                } else {
+                    $form.find('.form-success').addClass('show');
+                }
+            },
+            error: function() {
+                $btn.removeClass('loading');
+                alert('Error al enviar. Intenta de nuevo o escríbenos directamente a contacto@automindec.com');
             }
-        }, 1500);
+        });
     });
 
     // Remove error on focus
     $('.floating-input').on('focus', function() {
         $(this).removeClass('error');
     });
+});
+
+// ---- Modernization: Scroll-triggered animations ----
+$(function() {
+    // Navbar active link on scroll
+    var sections = $('section, .section, #about, #service, #blog, #contact');
+    var navLinks = $('.navbar .nav-link[href^="#"]');
+
+    $(window).on('scroll', function() {
+        var scrollPos = $(document).scrollTop() + 100;
+        sections.each(function() {
+            var top = $(this).offset().top - 100;
+            var bottom = top + $(this).outerHeight();
+            var id = $(this).attr('id');
+            if (scrollPos >= top && scrollPos < bottom) {
+                navLinks.removeClass('active');
+                $('.navbar .nav-link[href="#' + id + '"]').addClass('active');
+            }
+        });
+    });
+
+    // Scroll-triggered fade-up animations
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    // Observe about cards
+    $('.about-card').each(function() { observer.observe(this); });
+    // Observe service cards
+    $('#service .card').each(function() { observer.observe(this); });
+    // Observe blog cards
+    $('.blog-card').each(function() { observer.observe(this); });
+    // Observe contact cards
+    $('.contact-info-card, .contact-form-card').each(function() { observer.observe(this); });
 });
