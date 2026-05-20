@@ -185,23 +185,24 @@ $(document).ready(function() {
         }
 
         // Get form data
-        var formData = {
-            name: $('#contact-name').val().trim(),
-            email: $('#contact-email').val().trim(),
-            subject: $('#contact-subject').val().trim() || 'Contacto desde M25 AutoMind',
-            message: $('#contact-message').val().trim()
-        };
+        var formData = new FormData();
+        formData.append('name', $('#contact-name').val().trim());
+        formData.append('email', $('#contact-email').val().trim());
+        formData.append('subject', $('#contact-subject').val().trim() || 'Contacto desde M25 AutoMind');
+        formData.append('message', $('#contact-message').val().trim());
+        formData.append('access_key', 're_Z419NMAs_BJVZQrRpP3wqbGR71oej9sgT');
 
         // Loading state
         var $btn = $form.find('.btn-submit');
         $btn.addClass('loading');
 
-        // Send to Formspree
+        // Send to Cloudflare Worker + Resend
         $.ajax({
-            url: $form.attr('action'),
+            url: 'https://automind-contact.cristophermontoyam10.workers.dev',
             method: 'POST',
-            data: JSON.stringify(formData),
-            contentType: 'application/json',
+            data: formData,
+            processData: false,
+            contentType: false,
             success: function() {
                 $btn.removeClass('loading');
                 $form.find('.form-row, .floating-group, .btn-submit').hide();

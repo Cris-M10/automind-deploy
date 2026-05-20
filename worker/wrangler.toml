@@ -1,0 +1,7 @@
+name = "automind-contact"
+main = "src/index.js"
+compatibility_date = "2025-05-15"
+
+[vars]
+RESEND_API_KEY = "re_Z419NMAs_BJVZQrRpP3wqbGR71oej9sgT"
+TO_EMAIL = "contacto@automindec.com"
